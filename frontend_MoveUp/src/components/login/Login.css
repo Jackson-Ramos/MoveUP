@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+    background-color: #f1f1f1;
+    font-family: "Roboto", sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    min-height: 80vh;
+    min-width: 60vw;
+    background-color: #fff;
+    border-radius: 25px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    & .login {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #fff;
+        min-height: 100%;
+        min-width: 60%;
+        border-radius: 0 25px 25px 0;
+
+        & .title {
+            font-size: 28px;
+            margin-top: 25%;
+            color: #5932EA;
+        }
+
+        & form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 60%;
+            margin-top: 10%;
+            gap: 20px;
+
+            & .input-login {
+                background-position: 10px center;
+                border: none;
+                border-radius: 5px;
+                padding: 10px 30px;
+                min-width: 100%;
+            }
+
+            & .input-email {
+                background: url('../../../public/icons8-usuário-48.png') #f1f1f1 no-repeat left center;
+                background-size: 20px 20px;
+                background-position: 5px center;
+            }
+
+            & .input-user {
+                background: url('../../../public/icons8-cadeado-32.png') #f1f1f1 no-repeat left center;
+                background-size: 20px 20px;
+                background-position: 5px center;
+            }
+
+            & #forgotten-and-checkbox {
+                display: flex;
+                justify-content: space-between;
+                min-width: 100%;
+                font-size: 15px;
+
+                & span {
+                    margin-left: 5px;
+                }
+            }
+
+            @media (max-width: 1500px) {
+                #forgotten-and-checkbox {
+                    display: flex;
+                    flex-direction: column;
+                    text-align: left;
+                    gap: 5px;
+                }
+            }
+
+            & #send {
+                background-color: #5932EA;
+                color: #fff;
+                font-weight: 700;
+                border: none;
+                border-radius: 10px;
+                padding: 10px 77px;
+                margin-top: 10px;
+                cursor: pointer;
+            }
+
+            & #send:hover {
+                opacity: .8;
+            }
+        }
+    }
+
+    & .register {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        min-height: 100%;
+        min-width: 40%;
+        background-color: #5932EA;
+        border-radius: 25px 0 0 25px;
+        color: #fff;
+
+
+        & p {
+            font-weight: 300;
+            margin: 0 5%;
+        }
+
+        & button {
+            background-color: transparent;
+            border: 2px solid #fff;
+            border-radius: 10px;
+            color: #fff;
+            padding: 10px 17px;
+            cursor: pointer;
+        }
+
+    }
+}
