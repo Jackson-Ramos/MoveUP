@@ -1,9 +1,9 @@
 import { compare } from "bcrypt";
 import { generateToken } from "../../auth/generateToken";
-import { findByEmail } from "../../repositories/user/user-repository";
+import { findByEmailRepository } from "../../repositories/user/user-repository";
 
 export async function authenticateUserService(email: string, password: string): Promise<string> {
-  const user = await findByEmail(email)
+  const user = await findByEmailRepository(email)
 
   if (!user) throw new Error("Usuário ou senha invalida");
 
