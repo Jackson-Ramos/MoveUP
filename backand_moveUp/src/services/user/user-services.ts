@@ -1,7 +1,7 @@
 import * as bcrypt from "bcrypt";
 
 import { IUser } from "../../models/IUser";
-import { createUserRepository, findAllStudentRepository } from "../../repositories/user/user-repository";
+import { createUserRepository, findAllStudentRepository, findByEmailRepository } from "../../repositories/user/user-repository";
 import { badRequest, created, ok } from "../../utils/http-response";
 
 export async function createUserService(user: IUser) {
@@ -30,7 +30,14 @@ export async function findAllStudentService(trainerId: string, status: string) {
             break;
     }
 
-    const students = await  findAllStudentRepository(trainerId, activeFilter);
+    const students = await findAllStudentRepository(trainerId, activeFilter);
 
     return response = await ok(students)
+}
+
+export async function findByEmailService(email: string) {
+    const user = findByEmailRepository(email);
+
+    const response = user !== null ? await ok(user) : await badRequest();
+    return response;
 }
