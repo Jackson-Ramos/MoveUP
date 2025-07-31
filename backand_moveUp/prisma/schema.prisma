@@ -19,17 +19,35 @@ model User {
 
   student Student?
   trainer Trainer?
-  active  Boolean @default(true)
+  active  Boolean   @default(true)
 }
 
 model Student {
-  id        String    @id @default(uuid())
-  goals     String
-  user      User      @relation(fields: [id], references: [id])
-  trainer   Trainer   @relation(fields: [trainerId], references: [id])
+  id        String          @id @default(uuid())
+  user      User            @relation(fields: [id], references: [id])
+  trainer   Trainer         @relation(fields: [trainerId], references: [id])
   trainerId String
   workouts  Workout[]
   sessions  Session[]
+  profile   StudentProfile?
+}
+
+model StudentProfile {
+  id                String   @id @default(uuid())
+  student           Student  @relation(fields: [id], references: [id])
+  goals             String
+  trainingTime      String
+  trainingDays      Int
+  preferredLocation String
+  currentWeight     Float
+  currentHeight     Float
+  birthDate         DateTime
+  gender            String
+  experience        String
+  limitations       String?
+  medications       String?
+  hasTrainerBefore  Boolean
+  motivation        String
 }
 
 model Trainer {
