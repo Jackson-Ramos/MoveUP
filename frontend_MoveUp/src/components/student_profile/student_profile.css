@@ -3,4 +3,23 @@
     min-height: 90vh;
     background-color: #fff;
     border-radius: 25px;
+    padding: 25px 10%;
+
+    & label {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+        text-align: start;
+        margin: 5px;
+    }
+
+    & #section_one {
+        gap: 1;
+    }
+
+    & #section_two {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 25px;
+    }
 }
